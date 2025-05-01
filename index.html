@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Cumpleaños!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            /* Eliminamos overflow: hidden para permitir el scroll */
+        }
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            transform: rotate(45deg);
+            animation: appear 0.5s ease-in-out;
+            pointer-events: none; /* Evita que los corazones interfieran con más clics */
+        }
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            border-radius: 50%;
+        }
+        .heart::before {
+            top: -10px;
+            left: 0;
+        }
+        .heart::after {
+            left: -10px;
+            top: 0;
+        }
+        @keyframes appear {
+            0% {
+                transform: scale(0) rotate(45deg);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1) rotate(45deg);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="birthday-title">¡Feliz Cumpleaños!</h1>
+            <h1 class="birthday-title">Isabella Giraldo Giraldo</h1>
+            <div class="age-badge">17</div>
+        </header>
+        
+        <section class="birthday-girl">
+            <h2>Para una niña increíble en su día especial</h2>
+            <div class="photo-frame">
+                <div class="placeholder-photo"><img src="assent/mi familia.jpg">Foto aquí</div>
+            </div>
+        </section>
+        
+        <section class="wishes">
+            <h2>Deseos para ti</h2>
+            <div class="wish-card">
+                <p>Que este nuevo año de vida esté lleno de momentos inolvidables, risas, amor y éxitos.Hoy celebras diecisiete primaveras,
+                    que cada risa sea canto al viento,<br>
+                    momentos inolvidables en tus sendas,<br>
+                    amor que abrace tu sentimiento,<br>
+                    y éxitos que iluminen tu tiempo. <br>
+                    Que cada día sea una celebración de lo especial que eres, <br>
+                    y que el amor que te rodea sea tan grande como tú. <br>
+                    ¡Feliz cumpleaños, niña querida!</p>
+            </div>
+            <div class="wish-card">
+                <p>Que todos tus sueños se hagan realidad y que sigas brillando con tu luz única. <br>
+                    Diecisiete velas en tu pastel, <br>
+                    risas que pintan de oro tu sendero, <br>
+                    momentos inolvidables al andar, <br>
+                    amor y éxitos sea tu verdadero anhelo. <br>
+                    Que todos tus sueños cobren realidad <br>
+                    y sigas brillando con tu luz sin igual. <br>    
+                    ¡Feliz 17, primaveras maravillosas!</p>
+            </div>
+            <div class="wish-card">
+                <p>Que la felicidad te acompañe en cada paso que des y que este año sea el mejor hasta ahora.</p>
+            </div>
+        </section>
+        
+        <section class="gallery">
+            <h2>Momentos especiales</h2>
+            <div class="photos">
+                <div class="photo">
+                    <img src="assent/RECUERDO-1.jpg" alt="Recuerdo 1">
+                    <span></span>
+                </div>
+                <div class="photo">
+                    <img src="assent/RECUERDO-2.jpeg" alt="Recuerdo 2">
+                    <span></span>
+                </div>
+                <div class="photo">
+                    <img src="assent/REECUERDO-3.jpeg" alt="Recuerdo 3">
+                    <span></span>
+                </div>
+                <div class="photo">
+                    <img src="assent/RECUERDO-4.jpg" alt="Recuerdo 4">
+                    <span></span>
+                </div>
+                <div class="photo">
+                    <img src="assent/RECUERDO-5.jpg" alt="Recuerdo 5">
+                    <span></span>
+                </div>
+            </div>
+        </section>
+        
+        <section class="countdown">
+            <h2>Celebrando tu día</h2>
+            <div id="birthday-countdown">
+                ¡Hoy es el gran día!
+            </div>
+        </section>
+        
+        <footer>
+            <p>Con mucho cariño para ti en tu cumpleaños número 17</p>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+        </footer>
+    </div>
+
+    <canvas id="canvas-wrapping" style="position: absolute; top: 0; left: 0; z-index: -1;"></canvas>
+
+    <script src="/confite.js"></script>
+    <script>
+        // Función para crear un corazón en la posición del clic
+        function createHeart(event) {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.style.left = event.clientX + 'px';
+            heart.style.top = event.clientY + 'px';
+            document.body.appendChild(heart);
+            
+            // Remover el corazón después de 2 segundos
+            setTimeout(() => {
+                heart.remove();
+            }, 2000);
+        }
+
+        // Agregar event listener para clics en la pantalla
+        document.addEventListener('click', createHeart);
+    </script>
+</body>
+</html>

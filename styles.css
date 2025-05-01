@@ -1,0 +1,292 @@
+/* Estilos generales */
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#canvas-wrapping {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.confetti-piece {
+    /* Mantén los estilos originales que ya tenías */
+    z-index: 9999;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #e5b3f1 0%, #c3cfe2 100%);
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    font-family: 'Pacifico', cursive;
+    color: #6e6e6e;
+    text-align: center;
+}
+
+/* Encabezado */
+header {
+    text-align: center;
+    padding: 40px 0;
+    position: relative;
+}
+
+.birthday-title {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.age-badge {
+    background: #ff6b6b;
+    color: white;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0 auto;
+    box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+    position: relative;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Sección de la cumpleañera */
+.birthday-girl {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.birthday-girl h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.photo-frame {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 8px solid rgb(115, 231, 225);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.placeholder-photo {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* Sección de deseos */
+.wishes {
+    margin: 60px 0;
+}
+
+.wishes h2 {
+   
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+}
+
+.wish-card {
+    background: linear-gradient(135deg, #faabe6 0%, #a4f3ef 100%);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.wish-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.wish-card p {
+    font-family: "Indie Flower", cursive;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+/* Galería de fotos */
+.gallery {
+    margin: 60px 0;
+}
+
+.gallery h2 {
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+}
+
+.photos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.photo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    background: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.photo img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.photo:hover {
+    transform: scale(1.05);
+}
+
+/* Cuenta regresiva */
+.countdown {
+    
+    text-align: center;
+    margin: 60px 0;
+}
+
+.countdown h2 {
+    
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+}
+
+#birthday-countdown {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff6b6b;
+    padding: 20px;
+    background: linear-gradient(135deg, #c7a9c7 0%, #a3ebe8 100%);
+   
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    display: inline-block;
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 40px 0;
+    position: relative;
+}
+
+footer p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Efectos adicionales */
+.confetti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    background-image: 
+        radial-gradient(circle, #ff6b6b 10%, transparent 10%),
+        radial-gradient(circle, #5f27cd 10%, transparent 10%),
+        radial-gradient(circle, #ff9ff3 10%, transparent 10%),
+        radial-gradient(circle, #54a0ff 10%, transparent 10%);
+    background-size: 10px 10px;
+    animation: confetti 10s linear infinite;
+}
+
+@keyframes confetti {
+    0% {
+        background-position: 0 0, 0 0, 0 0, 0 0;
+    }
+    100% {
+        background-position: 500px 500px, 400px 400px, 300px 300px, 200px 200px;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .birthday-title {
+        font-size: 3rem;
+    }
+    
+    .photos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .birthday-title {
+        font-size: 2.5rem;
+    }
+    
+    .photos {
+        grid-template-columns: 1fr;
+    }
+    
+    .photo-frame {
+        width: 200px;
+        height: 200px;
+    }
+}
